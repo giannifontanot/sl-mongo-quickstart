@@ -17,6 +17,11 @@ import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* What did I learn?
+* How to use a POJO along with the mongodb query to retrieve and present data
+* Also, I was able to insert one record (one trip) to the database in Atlas
+ */
 public class QuickStartPojoExample {
     public static void main (String[] args){
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();

@@ -9,6 +9,12 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 public class QuickStart {
+    /*
+     * What did I learn?
+     * how to retrieve data from Atlas
+     * which database and which table (collection)
+     * find the first item of a collection
+     * */
     public static void main( String[] args ) {
 
         // Replace the placeholder with your MongoDB deployment's connection string
