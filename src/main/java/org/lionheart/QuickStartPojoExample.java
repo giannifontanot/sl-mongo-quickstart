@@ -14,6 +14,9 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class QuickStartPojoExample {
     public static void main (String[] args){
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
@@ -25,8 +28,14 @@ public class QuickStartPojoExample {
             MongoDatabase database = mongoClient.getDatabase("travel-blog-db").withCodecRegistry(pojoCodecRegistry);
             MongoCollection <Trip> collection = database.getCollection("trips", Trip.class);
 
-            Trip trip = collection.find(eq("tripTitle","Paris")).first();
-            System.out.println(trip);
+            Trip newTrip = new Trip("SOCAL", "http://socalimage.jpg", "This is a test of a SoCal trip");
+            collection.insertOne(newTrip);
+
+
+//            Trip trip = collection.find(eq("tripTitle","SOCAL")).first();
+List<Trip> trips = new ArrayList<>();
+collection.find().into(trips);
+            System.out.println(trips);
         }
 
     }
