@@ -31,6 +31,16 @@ public class ReadPlanetData {
             FindIterable <Document> iterable = collection.find();
             iterable.into(planets);
             System.out.println(planets);
+
+            // to query Planets in Compass
+            //{orderFromSun:{$lte:4}}
+            //{name:{$eq: "Jupiter"}}
+            //{name:{$not{$eq:"Earth"}}}
+            //{"surfaceTemperatureC.max":{$lte:200}}
+            //{mainAtmosphere:{$elemMatch:{$not:{$eq:"He"}}}}
+
+
+
         }
     }
 }
